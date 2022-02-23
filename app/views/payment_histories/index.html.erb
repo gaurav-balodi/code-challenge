@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Payment Histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>User</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payment_histories.each do |payment_history| %>
+      <tr>
+        <td><%= payment_history.amount %></td>
+        <td><%= payment_history.user_id %></td>
+        <td><%= payment_history.type %></td>
+        <td><%= link_to 'Show', payment_history %></td>
+        <td><%= link_to 'Edit', edit_payment_history_path(payment_history) %></td>
+        <td><%= link_to 'Destroy', payment_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment History', new_payment_history_path %>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CodeChallenge</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+    <%= render 'shared/header' %>
+    <div class="container">
+      <%= render 'shared/flash' %>
+      <%= yield %>
+    </div>
+    <%= javascript_pack_tag 'bulma', async: true %>
+  </body>
+</html>
