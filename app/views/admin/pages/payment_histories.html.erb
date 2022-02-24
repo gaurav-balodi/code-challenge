@@ -3,24 +3,22 @@
     <thead>
       <tr>
         <th>User</th>
-        <th>Service Bought</th>
         <th>Amount Paid</th>
         <th>Credited SMS</th>
       </tr>
     </thead>
     <tbody>
-      <% if @payment_histories.size > 0 %>
-        <% @payment_histories.each do |payment_history| %>
+      <% if @payment_charges.size > 0 %>
+        <% @payment_charges.each do |payment_charge| %>
           <tr>
-            <td><%= payment_history.user.email %></td>
-            <td><%= payment_history.payment_type %></td>
-            <td>$<%= payment_history.amount %></td>
-            <td><%= payment_history.credited_sms %></td>
+            <td><%= payment_charge.user.email %></td>
+            <td><%= number_to_currency(payment_charge.amount.fdiv(100)) %></td>
+            <td><%= payment_charge.credited_sms %></td>
           </tr>
         <% end %>
       <% else %>
         <tr>
-          <td colspan="4">No payment history available</td>
+          <td colspan="3">No payment history available</td>
         </tr>
       <% end %>
     </tbody>

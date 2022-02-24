@@ -1,12 +1,14 @@
 <% if flash[:notice] %>
-  <div class="column">
+  <div class="column" id="notification-success">
     <div class="notification is-success">
+      <button class="delete" data-target="notification-success"></button>
       <%= flash[:notice] %>
     </div>
   </div>
 <% elsif flash[:alert] %>
-  <div class="column">
+  <div class="column" id="notification-alert">
     <div class="notification is-danger">
+      <button class="delete" data-target="notification-alert"></button>
       <%= flash[:alert] %>
     </div>
   </div>

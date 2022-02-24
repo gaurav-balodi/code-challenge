@@ -54,4 +54,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bulma-rails', '~> 0.9.3'
 gem 'devise'
-gem 'stripe'
+gem 'twilio-ruby', '~> 5.65.0'
+gem 'pay', '~> 3.0'
+gem 'stripe', '>= 2.8', '< 6.0'

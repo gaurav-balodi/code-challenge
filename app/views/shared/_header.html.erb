@@ -4,11 +4,6 @@
 			<a class="navbar-item" href="../">
 				<%= image_tag "bulma.png", alt: "Logo"%>
 			</a>
-			<span class="navbar-burger burger" data-target="navbarMenu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</span>
 		</div>
 		<div id="navbarMenu" class="navbar-menu">
 			<div class="navbar-end">
@@ -22,7 +17,7 @@
 						</div>
 					</div>
 				<% else %>
-					<%= link_to "Home", welcome_path, class: class_names("navbar-item", { "is-active": current_page?(welcome_path) }) %>
+					<%= link_to "Home", root_path, class: class_names("navbar-item", { "is-active": current_page?(root_path) }) %>
 					<%= link_to "Log in", new_user_session_path, class: class_names("navbar-item", { "is-active": current_page?(new_user_session_path) }) %>
 				<% end %>
 			</div>

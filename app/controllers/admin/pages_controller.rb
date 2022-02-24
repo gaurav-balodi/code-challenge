@@ -6,7 +6,7 @@ class Admin::PagesController < ApplicationController
   end
 
   def payment_histories
-    @payment_histories = PaymentHistory.all
+    @payment_charges = PaymentCharge.all
   end
 
   private

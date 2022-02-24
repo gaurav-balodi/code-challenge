@@ -1,11 +1,14 @@
 class HomeController < ApplicationController
   skip_before_action :authenticate_user!, only: :welcome
-  before_action :redirect_to_admin_dashboard, only: :dashboard
 
   def welcome
   end
 
   def dashboard
+    current_user.set_payment_processor :stripe
+
+    @checkout_session = current_user.payment_processor.checkout(
+      mode: "payment", line_items: "price_1KWkmKSHWQqRGCm83cXb2rPP")
   end
 
   def send_sms
@@ -23,10 +26,5 @@ class HomeController < ApplicationController
 
   def purchase_sms
   	#TODO implement stripe
-  end
-
-  private
-  def redirect_to_admin_dashboard
-  	redirect_to(:admin_pages_dashboard) if current_user.admin?
   end
 end

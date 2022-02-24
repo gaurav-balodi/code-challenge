@@ -7,7 +7,7 @@
 					<p class="is-size-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi soluta
 						voluptate facere molestiae consequatur.</p>
 					<div class="social-media">
-						<%= link_to "Purchase SMS", "javascript:void(0)", class: "button is-light is-large" %>
+						<%= render partial: "pay/stripe/checkout_button", locals: { session: @checkout_session, title: "Purchase SMS" } %>
 					</div>
 				</div>
 			</div>
